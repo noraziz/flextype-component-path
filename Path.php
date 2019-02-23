@@ -18,19 +18,31 @@ use Flextype\Component\Http\Http;
 class Path
 {
     
-    /**
-     * Get Theme Path
-     *
-     * $action = Path::theme_path('folder', 'file');
-     *
-     * @param string $folder_name
-	 * @param string $file_name
-     * @param mixed
-     */
-    public static function theme_path(string $folder_name, string $file_name) : string
-    {
-        return Http::getBaseUrl() . '/site/themes/' . Registry::get('settings.theme') . '/assets/' . $file_name;
-    }
+	/**
+	* Get Theme Path
+	*
+	* $action = Path::theme_path();
+	*
+	*/
+	public static function theme_path() : string
+	{
+		return Http::getBaseUrl() . '/site/themes/' . Registry::get('settings.theme') . '/';
+	}
+	
+	
+	/**
+	* Get Theme Assets Path
+	*
+	* $action = Path::theme_asset_path('folder', 'file');
+	*
+	* @param string $folder_name
+	* @param string $file_name
+	* @param mixed
+	*/
+	public static function theme_asset_path(string $folder_name, string $file_name) : string
+	{
+		return Http::getBaseUrl() . '/site/themes/' . Registry::get('settings.theme') . '/assets/' . $file_name;
+	}
 	
 	public static function test(string $folder_name, string $file_name) : string
 	{
