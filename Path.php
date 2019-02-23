@@ -41,7 +41,7 @@ class Path
 	*/
 	public static function theme_asset_path(string $folder_name, string $file_name) : string
 	{
-		return Http::getBaseUrl() . '/site/themes/' . Registry::get('settings.theme') . '/assets/' . $file_name;
+		return self::getBaseUrl() . '/site/themes/' . Registry::get('settings.theme') . '/assets/' . $folder_name . '/' . $file_name;
 	}
 	
 	public static function test(string $folder_name, string $file_name) : string
